@@ -1,2 +1,5 @@
+settings.json
+
+# Meteor
 .meteor/local
 .meteor/meteorite
