@@ -2,16 +2,13 @@ const BASEPATH = 'https://api.github.com';
 
 Meteor.methods({
 	createPullRequest: function(content) {
-		let PUT = Meteor.wrapAsync(HTTP.put),
-			POST = Meteor.wrapAsync(HTTP.post);
-
 		let owner = 'Flightan',
 			repo = 'loulou',
 			path = 'test-1.yaml',
 			branch = 'ludwig-test-2';
 
 		try {
-			PUT(`${BASEPATH}/repos/${owner}/${repo}/contents/${path}`, {
+			HTTP.put(`${BASEPATH}/repos/${owner}/${repo}/contents/${path}`, {
 				headers: {
 					Accept: 'application/vnd.github.v3+json',
 					Authorization: `token ${Meteor.settings.oauth}`,
@@ -24,7 +21,7 @@ Meteor.methods({
 				}
 			});
 
-			POST(`${BASEPATH}/repos/${owner}/${repo}/pulls`, {
+			HTTP.post(`${BASEPATH}/repos/${owner}/${repo}/pulls`, {
 				headers: {
 					Accept: 'application/vnd.github.v3+json',
 					Authorization: `token ${Meteor.settings.oauth}`,
