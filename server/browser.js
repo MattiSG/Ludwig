@@ -1,6 +1,9 @@
 var fs = Npm.require('fs');
 var path = Npm.require('path');
 
+const repo = 'loulou';
+
+
 function walk(root, done) {
   let results = [];
   fs.readdir(root, function(err, list) {
@@ -32,6 +35,6 @@ function walk(root, done) {
 
 Meteor.methods({
   getTree: () => {
-    return Meteor.wrapAsync(walk)(Meteor.settings.basePath);
+    return Meteor.wrapAsync(walk)(`${Meteor.settings.basePath}/${repo}`);
   }
 });
