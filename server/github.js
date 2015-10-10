@@ -9,15 +9,29 @@ github.authenticate({
 });
 
 Meteor.methods({
-	createPullRequest: () => {
-		return Async.runSync((done) => {
-			github.pullRequests.create({
+	createPullRequest: function(content) {
+		let createContent = Meteor.wrapAsync(github.repos.createContent, github.repos),
+			createPullRequest = Meteor.wrapAsync(github.pullRequests.create, github.pullRequests);
+
+		try {
+			createContent({
+				user:		'Flightan',
+				repo:		'loulou',
+				ref:		'ludwig-test',
+				message:	'Add test',
+				path:		'test-1.yaml',
+				content:	content,
+			});
+
+			createPullRequest({
 				user:	'Flightan',
 				repo:	'loulou',
 				base:	'master',
 				head:	'ludwig-test',
 				title:	'Test PR',
-			}, done);
-		}).result;
+			});
+		} catch(err) {
+			throw new Meteor.Error(JSON.parse(err.message));	// unwrap GitHub API response
+		}
 	}
 });
