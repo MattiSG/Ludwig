@@ -1,8 +1,10 @@
 <template name="getTree">
   <button>{{_ 'getTree' }}</button>
-  <ul>
-    {{#each tree}}
-      <li>{{path}}</li>
-    {{/each}}
-  </ul>
+  {{#if tree }}
+    <ul>
+      {{#each tree}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+  {{/if}}
 </template>

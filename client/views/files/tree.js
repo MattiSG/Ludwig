@@ -14,7 +14,7 @@ Template.getTree.events({
       if (err) {
         console.error(err);
       }
-      template.tree.set(result.tree);
+      template.tree.set(result);
     });
   }
 });
