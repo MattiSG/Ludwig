@@ -3,8 +3,8 @@
 	<button>{{_ 'createPullRequest' }}</button>
 	{{#if error }}
 		<details class="error">
-			<summary>{{ error.message }}</summary>
-			<pre>{{ json error }}</pre>
+			<summary>{{_ 'pullRequestError' }}</summary>
+			<pre>{{ error }}</pre>
 		</details>
 	{{/if}}
 </template>
