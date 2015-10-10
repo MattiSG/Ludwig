@@ -1,14 +1,20 @@
+Template.getTree.onCreated(function() {
+  this.tree = new ReactiveVar();
+});
+
 Template.getTree.helpers({
-  tree: () => {
-    return Session.get('content').tree;
+  tree: function() {
+    return Template.instance().tree.get();
   }
 });
 
 Template.getTree.events({
-  'click button': () => {
+  'click button': (e, template) => {
     Meteor.call('getTree', function(err, result) {
-      Session.set('content', result);
-      console.log(result);
+      if (err) {
+        console.error(err);
+      }
+      template.tree.set(result.tree);
     });
   }
 });
