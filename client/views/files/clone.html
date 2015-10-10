@@ -1,0 +1,9 @@
+<template name="clone">
+  <button>{{_ 'clone' }}</button>
+  {{#if error }}
+    <details class="error">
+      <summary>{{ error.reason }}</summary>
+      <pre>{{ json error }}</pre>
+    </details>
+  {{/if}}
+</template>

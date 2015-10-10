@@ -1,3 +1,4 @@
 {
-  "getTree": "Afficher l'arborescence"
+  "getTree": "Afficher l'arborescence",
+  "clone": "Initialiser"
 }

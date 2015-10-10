@@ -1,3 +1,4 @@
+var path = Npm.require('path');
 var GithubApi = Meteor.npmRequire('github');
 var github = new GithubApi({
 	version: "3.0.0"
@@ -19,6 +20,17 @@ Meteor.methods({
 				title:	'Test PR',
 			}, done);
 		}).result;
+	}
+});
+
+Meteor.methods({
+	clone: () => {
+		try {
+			var result = Git.clone('https://github.com/Flightan/loulou', path.join(Meteor.settings.basePath, '/loulou/'));
+			return result;
+		} catch (ex) {
+			throw new Meteor.Error(500, 'Exception in clone', ex);
+		}
 	}
 });
 
