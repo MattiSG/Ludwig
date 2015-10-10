@@ -20,7 +20,7 @@ Meteor.methods({
 				ref:		'ludwig-test',
 				message:	'Add test',
 				path:		'test-1.yaml',
-				content:	content,
+				content:	CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(content)),
 			});
 
 			createPullRequest({
