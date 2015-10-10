@@ -1,3 +1,10 @@
 <template name="createPullRequest">
+	<textarea>contenu: proposé</textarea>
 	<button>{{_ 'createPullRequest' }}</button>
+	{{#if error }}
+		<details class="error">
+			<summary>{{_ 'pullRequestError' }}</summary>
+			<pre>{{ error }}</pre>
+		</details>
+	{{/if}}
 </template>

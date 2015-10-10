@@ -1,3 +1,3 @@
 Template.registerHelper('json', (...values) => {
-  return values.map(JSON.stringify).join('\n');
+	return values.map(JSON.stringify).join('\n');
 });

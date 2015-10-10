@@ -1,0 +1,4 @@
+{
+	"oauth": "065594049205d88d85b42f3fcd82dfc04616834e",  // a GitHub personal access token
+	"basePath": "/path/to/local/repo/container"  // your repo will be cloned there
+}

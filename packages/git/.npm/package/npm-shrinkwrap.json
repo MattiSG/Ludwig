@@ -1,10 +1,10 @@
 {
   "dependencies": {
     "gift": {
-      "version": "0.6.1",
+      "version": "http://registry.npmjs.org/gift/-/gift-0.6.1.tgz",
       "dependencies": {
         "underscore": {
-          "version": "1.8.3"
+          "version": "http://registry.npmjs.org/underscore/-/underscore-1.8.3.tgz"
         }
       }
     }
