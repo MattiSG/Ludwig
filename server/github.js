@@ -5,7 +5,7 @@ var github = new GithubApi({
 
 github.authenticate({
 	type:	'oauth',
-	token:	'4d8e0460b78c456b2dc09036cd7898151419a594'
+	token:	Meteor.settings.oauth
 });
 
 Meteor.methods({
