@@ -10,7 +10,7 @@ Template.createPullRequest.helpers({
 Template.createPullRequest.events({
 	'click button': (event, template) => {
 		Meteor.call('createPullRequest', template.find('textarea').value, (err, result) => {
-			template.error.set(err.error.message);
+			template.error.set(err.error);
 		});
 	}
 });

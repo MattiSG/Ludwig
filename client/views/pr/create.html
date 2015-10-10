@@ -2,6 +2,9 @@
 	<textarea>contenu: proposé</textarea>
 	<button>{{_ 'createPullRequest' }}</button>
 	{{#if error }}
-		<pre>{{ error }}</pre>
+		<details class="error">
+			<summary>{{ error.message }}</summary>
+			<pre>{{ json error }}</pre>
+		</details>
 	{{/if}}
 </template>
