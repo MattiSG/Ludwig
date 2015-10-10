@@ -32,13 +32,6 @@ function walk(root, done) {
 
 Meteor.methods({
   getTree: () => {
-    let readdir = Meteor.wrapAsync(walk);
-
-    try {
-      let result = readdir(Meteor.settings.basePath);
-      return result;
-    } catch (ex) {
-      return Meteor.Error(500, 'Error in getTree', ex);
-    }
+    return Meteor.wrapAsync(walk)(Meteor.settings.basePath);
   }
 });
