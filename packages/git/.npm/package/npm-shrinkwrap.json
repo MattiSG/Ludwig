@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "gift": {
+      "version": "0.6.1",
+      "dependencies": {
+        "underscore": {
+          "version": "1.8.3"
+        }
+      }
+    }
+  }
+}
